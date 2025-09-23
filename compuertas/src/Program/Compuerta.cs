@@ -19,21 +19,21 @@ public class Compuerta
     public int Resultado()
     {
 
-        if this.tipo == AND {
+        if (this.tipo == AND) {
 
             return this.entradas[0] * this.entradas[1];
 
         }
 
-        else if this.tipo == OR {
+        else if (this.tipo == OR) {
 
             return this.entradas[0] + this.entradas[1];
 
         }
 
-        else if this.tipo == NOT {
+        else if (this.tipo == NOT) {
 
-            if this.entradas[0] == 0{
+            if (this.entradas[0] == 0){
                 return 1
             }
             else
