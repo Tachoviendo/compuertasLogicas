@@ -1,5 +1,6 @@
 ﻿namespace Program;
 using Library;
+using test.library.Test;
 class Program
 {
     static void Main(string[] args)
@@ -17,8 +18,6 @@ class Program
         int res3 = cNOT.Resultado();
 
         Console.WriteLine($"Entradas: [{cAND.getEntrada()}] Resultado de AND: {res1} \nEntradas : [{cOR.getEntrada()}] Resultado de OR: {res2} \nEntradas : [{cNOT.getEntrada()}] Resultado de NOT: {res3}");
-
-        
 
     }
     
