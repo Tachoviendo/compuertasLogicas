@@ -1,24 +1,88 @@
-﻿namespace Program;
-using Library;
-using test.library.Test;
-class Program
+﻿namespace Program
 {
-    static void Main(string[] args)
+    using System.Collections.Generic; 
+    using Library;
+
+    class Program
     {
-        List<int> entradasAND = new List<int> { 1, 0 };
-        Compuerta cAND = new Compuerta(entradasAND, Compuerta.tiposCompuerta.AND);
-        int res1 = cAND.Resultado();
+        public class GarageGate
+        {
+            public List<int> input;
+            int a = 0;
+            int b = 0;
+            int c = 0;
+
+            Compuerta andIzq;
+            Compuerta andDer;
+            Compuerta andFIN;
+            Compuerta or;
+            Compuerta notIzq;
+            Compuerta notDer;
+
+            public GarageGate(int a, int b, int c)
+            {
+                this.a = a;
+                this.b = b;
+                this.c = c;
+            }
+            public void setInputs(int c, int b, int a){
+                this.a = a;
+                this.b = b;
+                this.c = c;
+            }
+
+            public string Calcular()
+            {
+                this.input = new List<int> { a, b };
+                this.andIzq = new Compuerta(input, Compuerta.tiposCompuerta.AND);
+
+                this.input = new List<int> { a };
+                this.notIzq = new Compuerta(input, Compuerta.tiposCompuerta.NOT);
+
+                this.input = new List<int> { b };
+                this.notDer = new Compuerta(input, Compuerta.tiposCompuerta.NOT);
+
+                this.input = new List<int> { notIzq.Resultado(), notDer.Resultado() };
+                this.andDer = new Compuerta(input, Compuerta.tiposCompuerta.AND);
+
+                this.input = new List<int> { andIzq.Resultado(), andDer.Resultado() };
+                this.or = new Compuerta(input, Compuerta.tiposCompuerta.OR);
+
+                this.input = new List<int> { or.Resultado(), c };
+                this.andFIN = new Compuerta(input, Compuerta.tiposCompuerta.AND);
+
+                return ($"Inputs: c({this.c}), b({this.b}), a({this.a}), Resultado = {andFIN.Resultado()}");
+            }
+        }
+
+
+        static void Main(string[] args){
+                
+
+            
+            GarageGate garage = new GarageGate(0, 0, 0);
+            Console.WriteLine(garage.Calcular());
+            garage.setInputs(0,0,1);
+            Console.WriteLine(garage.Calcular());
+
+            garage.setInputs(0,1,0);
+            Console.WriteLine(garage.Calcular());
+            
+            garage.setInputs(0,1,1);
+            Console.WriteLine(garage.Calcular());
         
-        List<int> entradasOR = new List<int> { 1, 0 };
-        Compuerta cOR = new Compuerta(entradasOR, Compuerta.tiposCompuerta.OR);
-        int res2 = cOR.Resultado();
+            garage.setInputs(1,0,0);
+            Console.WriteLine(garage.Calcular());
 
-        List<int> entradaNOT = new List <int> {1};
-        Compuerta cNOT = new Compuerta(entradaNOT, Compuerta.tiposCompuerta.NOT);
-        int res3 = cNOT.Resultado();
+            garage.setInputs(1,0,1);
+            Console.WriteLine(garage.Calcular());
+            
+            garage.setInputs(1,1,0);
+            Console.WriteLine(garage.Calcular());
 
-        Console.WriteLine($"Entradas: [{cAND.getEntrada()}] Resultado de AND: {res1} \nEntradas : [{cOR.getEntrada()}] Resultado de OR: {res2} \nEntradas : [{cNOT.getEntrada()}] Resultado de NOT: {res3}");
+            garage.setInputs(1,1,1);
+            Console.WriteLine(garage.Calcular());
 
+        }
     }
-    
 }
