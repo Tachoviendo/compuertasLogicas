@@ -1,0 +1,55 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.2.5">
+  <diagram name="Page-1" id="lMIJFM6bcJdYps1cZq6z">
+    <mxGraphModel dx="1489" dy="803" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="5YvgKLBLuCoVQpodmqgO-10" value="GarageGate" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="260" width="220" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="5YvgKLBLuCoVQpodmqgO-11" value="- input : list&amp;lt;int&amp;gt;&lt;div&gt;- a: int&lt;/div&gt;&lt;div&gt;-b: int&lt;/div&gt;&lt;div&gt;-c:int&lt;/div&gt;&lt;div&gt;-or: Compuerta&lt;/div&gt;&lt;div&gt;-andIzq : Compuerta&lt;/div&gt;&lt;div&gt;-andDer: Compuerta&lt;/div&gt;&lt;div&gt;-andFin: Compuerta&lt;/div&gt;&lt;div&gt;-notIzq: Compuerta&lt;/div&gt;&lt;div&gt;-notDer: Compuerta&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="5YvgKLBLuCoVQpodmqgO-10" vertex="1">
+          <mxGeometry y="26" width="220" height="154" as="geometry" />
+        </mxCell>
+        <mxCell id="5YvgKLBLuCoVQpodmqgO-12" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="5YvgKLBLuCoVQpodmqgO-10" vertex="1">
+          <mxGeometry y="180" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="5YvgKLBLuCoVQpodmqgO-13" value="+ Garagegate (a: int, b:int, c: int)&lt;div&gt;+ setInputs(c: int, b: int, a: int) :void&lt;/div&gt;&lt;div&gt;+calculat(): string&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="5YvgKLBLuCoVQpodmqgO-10" vertex="1">
+          <mxGeometry y="188" width="220" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="SEWLyKoUKugrVS11l3xI-1" value="Program" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="110" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="SEWLyKoUKugrVS11l3xI-2" value="+ Main (args: string[])&amp;nbsp; : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="SEWLyKoUKugrVS11l3xI-1">
+          <mxGeometry y="26" width="170" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="SEWLyKoUKugrVS11l3xI-6" value="" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;exitX=0.526;exitY=1.008;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="SEWLyKoUKugrVS11l3xI-2">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="199.5" y="170" as="sourcePoint" />
+            <mxPoint x="209.5" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SEWLyKoUKugrVS11l3xI-7" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="SEWLyKoUKugrVS11l3xI-6">
+          <mxGeometry x="-1" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SEWLyKoUKugrVS11l3xI-8" value="" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.483;exitY=1.023;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="5YvgKLBLuCoVQpodmqgO-13" target="SEWLyKoUKugrVS11l3xI-10">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="120" y="550" as="sourcePoint" />
+            <mxPoint x="280" y="560" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="220" y="511" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SEWLyKoUKugrVS11l3xI-9" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="SEWLyKoUKugrVS11l3xI-8">
+          <mxGeometry x="-1" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SEWLyKoUKugrVS11l3xI-10" value="Compuertas" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="720" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="SEWLyKoUKugrVS11l3xI-11" value="+ tiposCompuerta { AND,OR,NOT}&lt;div&gt;+ Resultado():int&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="SEWLyKoUKugrVS11l3xI-10">
+          <mxGeometry y="26" width="200" height="44" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
