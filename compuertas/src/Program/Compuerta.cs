@@ -21,7 +21,7 @@ public class Compuerta
 
         if (this.tipo == AND) {
 
-            return this.entradas[0] * this.entradas[1];
+            return this.entradas[0] * this.entradas[1];   
 
         }
 
@@ -34,11 +34,11 @@ public class Compuerta
         else if (this.tipo == NOT) {
 
             if (this.entradas[0] == 0){
-                return 1
+                return 1;
             }
             else
             {
-                return 0
+                return 0; ;
             }
 
 
