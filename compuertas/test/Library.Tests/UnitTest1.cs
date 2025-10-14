@@ -6,7 +6,7 @@
 
     public class CompuertaTests
     {
-        // AND tests
+        
         [Test]
         public void And_MixedInputs_Returns0()
         {
@@ -34,7 +34,7 @@
             Assert.AreEqual(0, result);
         }
 
-        // OR tests
+        
         [Test]
         public void Or_MixedInputs_Returns1()
         {
@@ -62,7 +62,7 @@
             Assert.AreEqual(1, result);
         }
 
-        // NOT tests
+        
         [Test]
         public void Not_InputOne_ReturnsZero()
         {
