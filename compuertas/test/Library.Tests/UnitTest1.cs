@@ -1,51 +1,84 @@
-﻿namespace Library.Tests;
-
-using NUnit.Framework;
-using System.Collections.Generic;
-using Library;
-
-public class Tests1
+﻿namespace Library.Tests
 {
-    private List<int> inputsAND_OR;
-    private List<int> inputNOT;
-    private Compuerta cAND;
-    private Compuerta cOR;
-    private Compuerta cNOT;
+    using NUnit.Framework;
+    using System.Collections.Generic;
+    using Library;
 
-    [SetUp]
-    public void Setup()
+    public class CompuertaTests
     {
-        // Se inicializan los campos de la clase, no variables locales
-        this.inputsAND_OR = new List<int> { 1, 0 };
-        this.inputNOT = new List<int> { 1 };
+        // AND tests
+        [Test]
+        public void And_MixedInputs_Returns0()
+        {
+            var inputs = new List<int> { 1, 0 };
+            var c = new Compuerta(inputs, Compuerta.tiposCompuerta.AND);
+            int result = c.Resultado();
+            Assert.AreEqual(0, result);
+        }
 
-        // Se inicializan las compuertas con los campos
-        this.cAND = new Compuerta(this.inputsAND_OR, Compuerta.tiposCompuerta.AND);
-        this.cOR = new Compuerta(this.inputsAND_OR, Compuerta.tiposCompuerta.OR);
-        
-        // Se corrige la inicialización de la compuerta NOT
-        this.cNOT = new Compuerta(this.inputNOT, Compuerta.tiposCompuerta.NOT);
-    }
+        [Test]
+        public void And_AllOnes_Returns1()
+        {
+            var inputs = new List<int> { 1, 1, 1 };
+            var c = new Compuerta(inputs, Compuerta.tiposCompuerta.AND);
+            int result = c.Resultado();
+            Assert.AreEqual(1, result);
+        }
 
-    [Test]
-    public void TestOR()
-    {
-        int result = this.cOR.Resultado();
-        Assert.AreEqual(1, result); // 1 OR 0 es igual a 1
-    }
+        [Test]
+        public void And_AllZeros_Returns0()
+        {
+            var inputs = new List<int> { 0, 0 };
+            var c = new Compuerta(inputs, Compuerta.tiposCompuerta.AND);
+            int result = c.Resultado();
+            Assert.AreEqual(0, result);
+        }
 
-    [Test]
-    public void TestAND()
-    {
-        int result = this.cAND.Resultado();
-        Assert.AreEqual(0, result); // 1 AND 0 es igual a 0
-    }
-    
-    // Se agrega el atributo [Test] para que NUnit ejecute la prueba
-    [Test]
-    public void TestNOT()
-    {
-        int result = this.cNOT.Resultado();
-        Assert.AreEqual(0, result); // La negación de 1 es 0
+        // OR tests
+        [Test]
+        public void Or_MixedInputs_Returns1()
+        {
+            var inputs = new List<int> { 1, 0 };
+            var c = new Compuerta(inputs, Compuerta.tiposCompuerta.OR);
+            int result = c.Resultado();
+            Assert.AreEqual(1, result);
+        }
+
+        [Test]
+        public void Or_AllZeros_Returns0()
+        {
+            var inputs = new List<int> { 0, 0, 0 };
+            var c = new Compuerta(inputs, Compuerta.tiposCompuerta.OR);
+            int result = c.Resultado();
+            Assert.AreEqual(0, result);
+        }
+
+        [Test]
+        public void Or_AllOnes_Returns1()
+        {
+            var inputs = new List<int> { 1, 1 };
+            var c = new Compuerta(inputs, Compuerta.tiposCompuerta.OR);
+            int result = c.Resultado();
+            Assert.AreEqual(1, result);
+        }
+
+        // NOT tests
+        [Test]
+        public void Not_InputOne_ReturnsZero()
+        {
+            var inputs = new List<int> { 1 };
+            var c = new Compuerta(inputs, Compuerta.tiposCompuerta.NOT);
+            int result = c.Resultado();
+            Assert.AreEqual(0, result);
+        }
+
+        [Test]
+        public void Not_InputZero_ReturnsOne()
+        {
+            var inputs = new List<int> { 0 };
+            var c = new Compuerta(inputs, Compuerta.tiposCompuerta.NOT);
+            int result = c.Resultado();
+            Assert.AreEqual(1, result);
+        }
     }
 }
